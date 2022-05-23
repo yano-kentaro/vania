@@ -1,0 +1,12 @@
+version: "3"
+services:
+  client:
+    container_name: client
+    image: node:18
+    tty: true
+    volumes:
+      - ./client/:/app/
+    working_dir: /app/
+    command: sh -c "yarn dev"
+    ports:
+      - 3000:3000
