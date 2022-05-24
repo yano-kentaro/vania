@@ -36,15 +36,25 @@ import {
 } from '@mui/material'
 
 //------------------------------
-// css
-import '../../css/landing/signUpDialog.css'
-
-//------------------------------
 // static
+
+//===================================================|0
+//                    スタイル定義
+//==========================================|2022_05_25
+
+const styleContentText = {
+  "white-space": "pre-wrap"
+}
+
+const styleTextField = {
+  "margin": "10px",
+  "width": "90%"
+}
 
 //===================================================|0
 //                    状態管理定義
 //==========================================|2022_05_25
+
 //------------------------------
 // ダイアログフラグ
 const signUpFlagState = atom({
@@ -68,10 +78,10 @@ function SignUpDialog() {
     <MUIDialog className='SignUpDialog' open={signUpFlag}>
       <MUIDialogTitle>{dialogTitle[lang]}</MUIDialogTitle>
       <MUIDialogContent>
-        <MUIDialogContentText className='white_space-pre_wrap mar-10px'>
+        <MUIDialogContentText sx={styleContentText}>
           {dialogText[lang]}
         </MUIDialogContentText>
-        <MUITextField className='mar-10px wid-90' autoFocus label={"Group Name"} variant="standard" />
+        <MUITextField sx={styleTextField} autoFocus label={"Group Name"} variant="standard" />
       </MUIDialogContent>
       <MUIDialogActions>
         <MUIButton onClick={toggleSignUpFlag}>{cancelLabel[lang]/* キャンセル */}</MUIButton>

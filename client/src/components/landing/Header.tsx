@@ -29,12 +29,27 @@ import {
 import { SignUpDialog, signUpFlagState } from './SignUpDialog'
 
 //------------------------------
-// css
-import '../../css/landing/header.css'
-
-//------------------------------
 // static
 import logo from '../../static/vania-logo.png'
+
+
+//===================================================|0
+//                    スタイル定義
+//==========================================|2022_05_25
+
+const styleContainer = {
+  "background-color": "#24292e",
+  "opacity": "0.8"
+}
+
+const styleToolBar = {
+  "display": "flex",
+  "justify-content": "space-between"
+}
+
+const styleLink = {
+  "cursor": "pointer"
+}
 
 //===================================================|0
 //                    コンポーネント定義
@@ -56,25 +71,24 @@ function Header() {
     <div className="Header">
       {/* PC版 */}
       <AppBar position="static">
-        <Container maxWidth="xl" className='bg_c-24292e opa-08'>
-          <Toolbar disableGutters className='dis-fl jus_con-spa_bet'>
+        <Container maxWidth="xl" sx={styleContainer}>
+          <Toolbar disableGutters sx={styleToolBar}>
             <Link href='#'>
               <img src={logo} height="50" alt="logo" />
             </Link>
-            <Breadcrumbs>
-              <Link className='cur-poi' underline="hover"
-                color="white" onClick={toggleSignInFlag}
+            <Breadcrumbs color="white">
+              <Link color="white" underline="hover"
+                sx={styleLink} onClick={toggleSignInFlag}
               >
                 {signIn[lang]/* ログイン */}
               </Link>
               <Link
-                className='cur-poi' underline="hover"
-                color="white" onClick={toggleSignUpFlag}
+                color="white" underline="hover"
+                sx={styleLink} onClick={toggleSignUpFlag}
               >
                 {signUp[lang]/* グループを作る */}
               </Link>
             </Breadcrumbs>
-            <Dialog open={signUpFlag}></Dialog>
             <SignUpDialog />
           </Toolbar>
         </Container>
