@@ -18,6 +18,7 @@
 // Modules
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { RecoilRoot } from 'recoil'
 
 //------------------------------
 // components
@@ -32,6 +33,8 @@ import './css/index.css'
 //==========================================|2022_05_22
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <RecoilRoot>
+      <App />
+    </RecoilRoot>
   </React.StrictMode>
 )
