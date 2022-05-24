@@ -31,7 +31,7 @@ import '../../css/App.css'
 import logo from '../../static/logo.svg'
 
 //===================================================|0
-//                    メイン処理
+//                    コンポーネント定義
 //==========================================|2022_05_22
 function App() {
   const [count, setCount] = useState(0)

@@ -29,7 +29,7 @@ import Footer from './Footer'
 import '../../css/App.css'
 
 //===================================================|0
-//                    メイン処理
+//                    コンポーネント定義
 //==========================================|2022_05_22
 function Layout() {
   const [count, setCount] = useState(0)
