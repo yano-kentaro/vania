@@ -16,14 +16,23 @@
 
 //------------------------------
 // Modules
-import { useState } from 'react'
+// import { useState } from 'react'
+import { atom, selector, useRecoilState } from 'recoil'
 import { getLang } from '../../lib/common'
-import { dialogTitle, dialogText } from '../../msg/landing/signUpDialog'
+import {
+  dialogTitle, dialogText, cancelLabel, okLabel
+} from '../../msg/landing/signUpDialog'
 
 //------------------------------
 // components
 import {
-  DialogTitle, DialogContent, DialogContentText, TextField
+  Dialog as MUIDialog,
+  DialogTitle as MUIDialogTitle,
+  DialogContent as MUIDialogContent,
+  DialogContentText as MUIDialogContentText,
+  DialogActions as MUIDialogActions,
+  Button as MUIButton,
+  TextField as MUITextField
 } from '@mui/material'
 
 //------------------------------
@@ -34,6 +43,16 @@ import '../../css/landing/signUpDialog.css'
 // static
 
 //===================================================|0
+//                    状態管理定義
+//==========================================|2022_05_25
+//------------------------------
+// ダイアログフラグ
+const signUpFlagState = atom({
+  key: 'signUpFlagState',
+  default: false
+})
+
+//===================================================|0
 //                    コンポーネント定義
 //==========================================|2022_05_23
 function SignUpDialog() {
@@ -42,23 +61,27 @@ function SignUpDialog() {
   const lang = getLang() // 言語設定取得
   //------------------------------
   // ダイアログ フラグ
-  const [openFlag, setOpenFlag] = useState(false)
-  const toggleSignUp = () => setOpenFlag(!openFlag)
+  const [signUpFlag, setSignUpFlag] = useRecoilState(signUpFlagState)
+  const toggleSignUpFlag = () => setSignUpFlag(!signUpFlag)
 
   return (
-    <div className='SignUpDialog'>
-      <DialogTitle>{dialogTitle[lang]}</DialogTitle>
-      <DialogContent>
-        <DialogContentText className='white_space-pre_wrap mar-10px'>
+    <MUIDialog className='SignUpDialog' open={signUpFlag}>
+      <MUIDialogTitle>{dialogTitle[lang]}</MUIDialogTitle>
+      <MUIDialogContent>
+        <MUIDialogContentText className='white_space-pre_wrap mar-10px'>
           {dialogText[lang]}
-        </DialogContentText>
-        <TextField className='mar-10px wid-90' autoFocus label={"Group Name"} variant="standard" />
-      </DialogContent>
-    </div>
+        </MUIDialogContentText>
+        <MUITextField className='mar-10px wid-90' autoFocus label={"Group Name"} variant="standard" />
+      </MUIDialogContent>
+      <MUIDialogActions>
+        <MUIButton onClick={toggleSignUpFlag}>{cancelLabel[lang]/* キャンセル */}</MUIButton>
+        <MUIButton onClick={toggleSignUpFlag}>{okLabel[lang]/* 決定 */}</MUIButton>
+      </MUIDialogActions>
+    </MUIDialog>
   )
 }
 
 //===================================================|0
 //                    Export
 //==========================================|2022_05_23
-export { SignUpDialog }
+export { SignUpDialog, signUpFlagState }

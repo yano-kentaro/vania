@@ -17,15 +17,16 @@
 //------------------------------
 // Modules
 import { useState } from 'react'
+import { atom, selector, useRecoilState } from 'recoil'
 import { getLang } from '../../lib/common'
 import { signUp, signIn } from '../../msg/landing/header'
-import { SignUpDialog } from './SignUpDialog'
 
 //------------------------------
 // components
 import {
   AppBar, Container, Toolbar, Link, Breadcrumbs, Dialog
 } from '@mui/material'
+import { SignUpDialog, signUpFlagState } from './SignUpDialog'
 
 //------------------------------
 // css
@@ -44,7 +45,7 @@ function Header() {
   const lang = getLang() // 言語設定取得
   //------------------------------
   // 新規登録 フラグ
-  const [signUpFlag, setSignUpFlag] = useState(false)
+  const [signUpFlag, setSignUpFlag] = useRecoilState(signUpFlagState)
   const toggleSignUpFlag = () => setSignUpFlag(!signUpFlag)
   //------------------------------
   // ログイン フラグ
@@ -53,6 +54,7 @@ function Header() {
 
   return (
     <div className="Header">
+      {/* PC版 */}
       <AppBar position="static">
         <Container maxWidth="xl" className='bg_c-24292e opa-08'>
           <Toolbar disableGutters className='dis-fl jus_con-spa_bet'>
@@ -63,18 +65,17 @@ function Header() {
               <Link className='cur-poi' underline="hover"
                 color="white" onClick={toggleSignInFlag}
               >
-                {signIn[lang]}
+                {signIn[lang]/* ログイン */}
               </Link>
-              <Link className='cur-poi' underline="hover"
+              <Link
+                className='cur-poi' underline="hover"
                 color="white" onClick={toggleSignUpFlag}
               >
-                {signUp[lang]}
+                {signUp[lang]/* グループを作る */}
               </Link>
             </Breadcrumbs>
-            <Dialog open={signInFlag}></Dialog>
-            <Dialog open={signUpFlag}>
-              <SignUpDialog />
-            </Dialog>
+            <Dialog open={signUpFlag}></Dialog>
+            <SignUpDialog />
           </Toolbar>
         </Container>
       </AppBar>
