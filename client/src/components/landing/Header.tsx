@@ -1,4 +1,4 @@
-//┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 //┃
 //┃──┨ Header.tsx [Ver.2022_05_22] ┃
 //┃
@@ -8,34 +8,36 @@
 //┃
 //┃──┨ Landingページのヘッダー ┃
 //┃
-//┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-//===================================================|0
-//                    依存関係
-//==========================================|2022_05_22
+//=============================================================|0
+//                          依存関係
+//====================================================|2022_05_22
 
-//------------------------------
+//------------------------------------------
 // Modules
 import { useState } from 'react'
-import { atom, selector, useRecoilState } from 'recoil'
-import { getLang } from '../../lib/common'
-import { signUp, signIn } from '../../msg/landing/header'
+import * as RCL from 'recoil'
 
-//------------------------------
-// components
-import {
-  AppBar, Container, Toolbar, Link, Breadcrumbs, Dialog
-} from '@mui/material'
+//------------------------------------------
+// Components
+import * as MUI from '@mui/material'
 import { SignUpDialog, signUpFlagState } from './SignUpDialog'
 
-//------------------------------
-// static
+//------------------------------------------
+// Functions
+import * as COMMON from '../../lib/common'
+import * as MSG from '../../msg/landing/header'
+
+
+//------------------------------------------
+// Static
 import logo from '../../static/vania-logo.png'
 
 
-//===================================================|0
+//=============================================================|0
 //                    スタイル定義
-//==========================================|2022_05_25
+//====================================================|2022_05_25
 
 const styleContainer = {
   "background-color": "#24292e",
@@ -51,18 +53,18 @@ const styleLink = {
   "cursor": "pointer"
 }
 
-//===================================================|0
+//=============================================================|0
 //                    コンポーネント定義
-//==========================================|2022_05_22
+//====================================================|2022_05_23
 function Header() {
-  //------------------------------
+  //------------------------------------------
   // 言語設定
-  const lang = getLang() // 言語設定取得
-  //------------------------------
+  const lang = COMMON.getLang() // 言語設定取得
+  //------------------------------------------
   // 新規登録 フラグ
-  const [signUpFlag, setSignUpFlag] = useRecoilState(signUpFlagState)
+  const [signUpFlag, setSignUpFlag] = RCL.useRecoilState(signUpFlagState)
   const toggleSignUpFlag = () => setSignUpFlag(!signUpFlag)
-  //------------------------------
+  //------------------------------------------
   // ログイン フラグ
   const [signInFlag, setSignInFlag] = useState(false)
   const toggleSignInFlag = () => setSignInFlag(!signInFlag)
@@ -70,34 +72,33 @@ function Header() {
   return (
     <div className="Header">
       {/* PC版 */}
-      <AppBar position="static">
-        <Container maxWidth="xl" sx={styleContainer}>
-          <Toolbar disableGutters sx={styleToolBar}>
-            <Link href='#'>
+      <MUI.AppBar position="static">
+        <MUI.Container maxWidth="xl" sx={styleContainer}>
+          <MUI.Toolbar disableGutters sx={styleToolBar}>
+            <MUI.Link href='#'>
               <img src={logo} height="50" alt="logo" />
-            </Link>
-            <Breadcrumbs color="white">
-              <Link color="white" underline="hover"
+            </MUI.Link>
+            <MUI.Breadcrumbs color="white">
+              <MUI.Link color="white" underline="hover"
                 sx={styleLink} onClick={toggleSignInFlag}
               >
-                {signIn[lang]/* ログイン */}
-              </Link>
-              <Link
+                {MSG.signIn[lang]/* ログイン */}
+              </MUI.Link>
+              <MUI.Link
                 color="white" underline="hover"
                 sx={styleLink} onClick={toggleSignUpFlag}
               >
-                {signUp[lang]/* グループを作る */}
-              </Link>
-            </Breadcrumbs>
+                {MSG.signUp[lang]/* グループを作る */}
+              </MUI.Link>
+            </MUI.Breadcrumbs>
             <SignUpDialog />
-          </Toolbar>
-        </Container>
-      </AppBar>
+          </MUI.Toolbar>
+        </MUI.Container>
+      </MUI.AppBar>
     </div>
   )
 }
 
-//===================================================|0
-//                    Export
-//==========================================|2022_05_22
+//------------------------------------------
+// export
 export default Header
