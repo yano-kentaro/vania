@@ -11,6 +11,38 @@
 //┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 //------------------------------------------
+// 機能紹介ボタン
+const functions: {[key:string]: string} = {
+    "ja": "機能紹介",
+    "en": "FUNCTIONS",
+    "en-US": "FUNCTIONS",
+}
+
+//------------------------------------------
+// 料金プランボタン
+const plans: {[key:string]: string} = {
+    "ja": "料金プラン",
+    "en": "PLANS",
+    "en-US": "PLANS",
+}
+
+//------------------------------------------
+// 技術ブログボタン
+const techBlog: {[key:string]: string} = {
+    "ja": "技術ブログ",
+    "en": "TECH BLOG",
+    "en-US": "TECH BLOG",
+}
+
+//------------------------------------------
+// 開発者プロフィールボタン
+const developerProfile: {[key:string]: string} = {
+    "ja": "開発者プロフィール",
+    "en": "DEVELOPER PROFILE",
+    "en-US": "DEVELOPER PROFILE",
+}
+
+//------------------------------------------
 // ログインボタン
 const signIn: {[key:string]: string} = {
     "ja": "ログイン",
@@ -18,12 +50,14 @@ const signIn: {[key:string]: string} = {
     "en-US": "SIGN IN",
 }
 
+//------------------------------------------
+// サインアップボタン
 const signUp: {[key:string]: string} = {
-    "ja": "グループを作る",
-    "en": "CREATE GROUP",
-    "en-US": "CREATE GROUP",
+    "ja": "無料トライアル",
+    "en": "FREE TRIAL",
+    "en-US": "FREE TRIAL",
 }
 
 //------------------------------------------
 // export
-export { signIn, signUp }
+export { functions, plans, techBlog, developerProfile, signIn, signUp }
