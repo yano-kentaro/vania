@@ -38,19 +38,46 @@ import logo from '../../static/vania-logo.png'
 //=============================================================|0
 //                    スタイル定義
 //====================================================|2022_05_25
+const styleAppBar = {
+  backgroundColor: "#123456",
+}
 
 const styleContainer = {
-  "background-color": "#24292e",
-  "opacity": "0.8"
+  width: "95%",
+  minHeight: "100px",
+  display: "flex",
+  alignItems: "center",
 }
 
 const styleToolBar = {
-  "display": "flex",
-  "justify-content": "space-between"
+  display: "flex",
+  width: "100%",
+  justifyContent: "space-between",
+  minHeight: "100px"
 }
 
-const styleLink = {
-  "cursor": "pointer"
+const styleButtonCommon = {
+  margin: "0 20px",
+  color: "white",
+  fontWeight: "bold",
+  transition: "all 0.25s",
+  fontSize: "medium",
+  "&:hover": {
+    transform: "scale(1.15, 1.15)",
+    backgroundColor: "#123456",
+  }
+}
+
+const styleButtonSignUp = {
+  margin: "0 1rem",
+  backgroundImage: "linear-gradient(to right, #F09819 0%, #FF512F 51%, #F09819 100%)",
+  borderRadius: "20px",
+  fontWeight: "bold",
+  transition: "all 0.25s",
+  "&:hover": {
+    backgroundImage: "linear-gradient(to right, #FF512F 0%, #F09819 51%, #FF512F 100%)",
+    transform: "scale(1.15, 1.15)"
+  }
 }
 
 //=============================================================|0
@@ -68,28 +95,48 @@ function Header() {
   // ログイン フラグ
   const [signInFlag, setSignInFlag] = useState(false)
   const toggleSignInFlag = () => setSignInFlag(!signInFlag)
+  //------------------------------------------
+  // 技術ブログへ遷移
+  function accessTechBlog() {
+    window.open('https://www.kengineer.dev/', '_blank');
+  }
+  //------------------------------------------
+  // 開発者プロフィールへ遷移
+  function accessDeveloperProfile() {
+    window.open('https://www.kengineer.dev/pages/author/', '_blank');
+  }
 
   return (
     <div className="Header">
       {/* PC版 */}
-      <MUI.AppBar position="static">
+      <MUI.AppBar position="static" sx={styleAppBar}>
         <MUI.Container maxWidth="xl" sx={styleContainer}>
           <MUI.Toolbar disableGutters sx={styleToolBar}>
             <MUI.Link href='#'>
               <img src={logo} height="50" alt="logo" />
             </MUI.Link>
             <MUI.Breadcrumbs color="white">
-              <MUI.Link color="white" underline="hover"
-                sx={styleLink} onClick={toggleSignInFlag}
-              >
+              <MUI.Button sx={styleButtonCommon}>
+                {MSG.functions[lang]/* 機能紹介 */}
+              </MUI.Button>
+              <MUI.Button sx={styleButtonCommon}>
+                {MSG.plans[lang]/* 料金プラン */}
+              </MUI.Button>
+              <MUI.Button sx={styleButtonCommon} onClick={accessTechBlog}>
+                {MSG.techBlog[lang]/* 技術ブログ */}
+              </MUI.Button>
+              <MUI.Button sx={styleButtonCommon} onClick={accessDeveloperProfile}>
+                {MSG.developerProfile[lang]/* 開発者プロフィール */}
+              </MUI.Button>
+              <MUI.Button sx={styleButtonCommon}>
                 {MSG.signIn[lang]/* ログイン */}
-              </MUI.Link>
-              <MUI.Link
-                color="white" underline="hover"
-                sx={styleLink} onClick={toggleSignUpFlag}
+              </MUI.Button>
+              <MUI.Button
+                variant="contained" sx={styleButtonSignUp}
+                onClick={toggleSignUpFlag}
               >
-                {MSG.signUp[lang]/* グループを作る */}
-              </MUI.Link>
+                {MSG.signUp[lang]/* 無料トライアル */}
+              </MUI.Button>
             </MUI.Breadcrumbs>
             <SignUpDialog />
           </MUI.Toolbar>
