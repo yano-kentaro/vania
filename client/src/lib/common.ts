@@ -14,9 +14,12 @@
 //                    言語設定取得
 //====================================================|2022_05_23
 function getLang(): string {
-    const lang = (window.navigator.languages
+    let lang = (window.navigator.languages
                 && window.navigator.languages[0])
                 || window.navigator.language
+    if(lang != 'ja') {
+        lang = 'en'
+    }
     return lang
 }
 
