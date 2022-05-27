@@ -20,6 +20,7 @@ import { useState } from 'react'
 
 //------------------------------------------
 // Components
+import * as MUI from '@mui/material'
 import Header from './Header'
 import Body from './Body'
 import Footer from './Footer'
@@ -31,11 +32,11 @@ function Layout() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="Layout">
+    <MUI.Box className="Layout">
       <Header />
       <Body />
       <Footer />
-    </div>
+    </MUI.Box>
   )
 }
 

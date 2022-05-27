@@ -21,6 +21,7 @@ import { getLang } from '../../lib/common'
 
 //------------------------------------------
 // Components
+import * as MUI from '@mui/material'
 
 //------------------------------------------
 // Static
@@ -34,9 +35,9 @@ function Body() {
   const lang = getLang() // 言語設定取得
 
   return (
-    <div className="Body">
+    <MUI.Box className="Body">
       <h1>ボディ</h1>
-    </div>
+    </MUI.Box>
   )
 }
 

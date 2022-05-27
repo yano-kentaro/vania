@@ -21,6 +21,7 @@ import { getLang } from '../../lib/common'
 
 //------------------------------------------
 // Components
+import * as MUI from '@mui/material'
 
 //------------------------------------------
 // Static
