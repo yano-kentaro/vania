@@ -28,7 +28,7 @@ import * as COMMON from '../../lib/common'
 
 //------------------------------------------
 // Text messages
-import * as MSG from '../../msg/landing/signUpDialog'
+import * as TXT from '../../text/landing/signUpDialog'
 
 //------------------------------------------
 // Static
@@ -71,10 +71,10 @@ function SignUpDialog() {
 
   return (
     <MUI.Dialog className='SignUpDialog' open={signUpFlag}>
-      <MUI.DialogTitle>{MSG.dialogTitle[lang]}</MUI.DialogTitle>
+      <MUI.DialogTitle>{TXT.dialogTitle[lang]}</MUI.DialogTitle>
       <MUI.DialogContent>
         <MUI.DialogContentText sx={styleContentText}>
-          {MSG.dialogText[lang]/* 説明文 */}
+          {TXT.dialogText[lang]/* 説明文 */}
         </MUI.DialogContentText>
         <MUI.TextField
           label={"Group Name"} variant="standard"
@@ -83,10 +83,10 @@ function SignUpDialog() {
       </MUI.DialogContent>
       <MUI.DialogActions>
         <MUI.Button onClick={toggleSignUpFlag}>
-          {MSG.cancelLabel[lang]/* キャンセル */}
+          {TXT.cancelLabel[lang]/* キャンセル */}
         </MUI.Button>
         <MUI.Button onClick={toggleSignUpFlag}>
-          {MSG.okLabel[lang]/* 決定 */}
+          {TXT.okLabel[lang]/* 決定 */}
         </MUI.Button>
       </MUI.DialogActions>
     </MUI.Dialog>
