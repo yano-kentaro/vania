@@ -26,7 +26,7 @@ import Landing from './components/pages/Landing'
 
 //------------------------------------------
 // CSS
-import './index.css'
+import './common.css'
 
 //=============================================================|0
 //                    コンポーネント定義

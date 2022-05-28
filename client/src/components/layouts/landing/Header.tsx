@@ -16,8 +16,8 @@
 
 //------------------------------------------
 // Modules
-import { useState } from 'react'
 import * as RCL from 'recoil'
+import { styled } from '@mui/material/styles'
 
 //------------------------------------------
 // Components
@@ -37,28 +37,17 @@ import 'src/common.css'
 //=============================================================|0
 //                    スタイル定義
 //====================================================|2022_05_25
-const styleAppBar = {
+
+//------------------------------------------
+// AppBar
+const AppBar = styled(MUI.AppBar) ({
   background: "linear-gradient(to right, #123456, #4C718C)",
-  boxShadow: "none",
-  top: 0,
-  zIndex: 1000
-}
-
-const styleContainer = {
-  width: "95%",
   height: "6.25rem",
-  display: "flex",
-  alignItems: "center",
-}
+})
 
-const styleToolBar = {
-  display: "flex",
-  width: "100%",
-  justifyContent: "space-between",
-  minHeight: "100px"
-}
-
-const styleButtonCommon = {
+//------------------------------------------
+// メニューボタン
+const MenuButton = styled(MUI.Button) ({
   margin: "0 20px",
   color: "white",
   fontWeight: "bold",
@@ -67,9 +56,11 @@ const styleButtonCommon = {
   "&:hover": {
     transform: "scale(1.15, 1.15)",
   }
-}
+})
 
-const styleButtonSignUp = {
+//------------------------------------------
+// サインアップボタン
+const SignUpButton = styled(MUI.Button) ({
   margin: "0 1rem",
   backgroundImage: "linear-gradient(to right, #F09819 0%, #FF512F 51%, #F09819 100%)",
   borderRadius: "20px",
@@ -79,7 +70,7 @@ const styleButtonSignUp = {
     backgroundImage: "linear-gradient(to right, #FF512F 0%, #F09819 51%, #FF512F 100%)",
     transform: "scale(1.15, 1.15)"
   }
-}
+})
 
 //=============================================================|0
 //                    コンポーネント定義
@@ -92,10 +83,6 @@ function Header() {
   // 新規登録 フラグ
   const [signUpFlag, setSignUpFlag] = RCL.useRecoilState(signUpFlagState)
   const toggleSignUpFlag = () => setSignUpFlag(!signUpFlag)
-  //------------------------------------------
-  // ログイン フラグ
-  const [signInFlag, setSignInFlag] = useState(false)
-  const toggleSignInFlag = () => setSignInFlag(!signInFlag)
   //------------------------------------------
   // 技術ブログへ遷移
   function accessTechBlog() {
@@ -110,39 +97,36 @@ function Header() {
   return (
     <MUI.Box className="Header">
       {/* PC版 */}
-      <MUI.AppBar position="fixed" sx={styleAppBar}>
-        <MUI.Container maxWidth="xl" sx={styleContainer}>
-          <MUI.Toolbar disableGutters sx={styleToolBar}>
+      <AppBar position="fixed" className="flex justify-center items-center">
+        <MUI.Box height={"100%"} width={"95%"} className="flex justify-center">
+          <MUI.Toolbar disableGutters sx={{width: "100%"}} className="flex justify-between">
             <MUI.Link href='#'>
-              <img src={logo} height="50" alt="logo" />
+              <img src={logo} height="50" alt="VANIA" />
             </MUI.Link>
             <MUI.Breadcrumbs color="white">
-              <MUI.Button sx={styleButtonCommon}>
+              <MenuButton>
                 {TXT.functions[lang]/* 機能紹介 */}
-              </MUI.Button>
-              <MUI.Button sx={styleButtonCommon}>
+              </MenuButton>
+              <MenuButton>
                 {TXT.plans[lang]/* 料金プラン */}
-              </MUI.Button>
-              <MUI.Button sx={styleButtonCommon} onClick={accessTechBlog}>
+              </MenuButton>
+              <MenuButton onClick={accessTechBlog}>
                 {TXT.techBlog[lang]/* 技術ブログ */}
-              </MUI.Button>
-              <MUI.Button sx={styleButtonCommon} onClick={accessDeveloperProfile}>
+              </MenuButton>
+              <MenuButton onClick={accessDeveloperProfile}>
                 {TXT.developerProfile[lang]/* 開発者プロフィール */}
-              </MUI.Button>
-              <MUI.Button sx={styleButtonCommon}>
+              </MenuButton>
+              <MenuButton>
                 {TXT.signIn[lang]/* ログイン */}
-              </MUI.Button>
-              <MUI.Button
-                variant="contained" sx={styleButtonSignUp}
-                onClick={toggleSignUpFlag}
-              >
+              </MenuButton>
+              <SignUpButton variant="contained" onClick={toggleSignUpFlag}>
                 {TXT.signUp[lang]/* 無料トライアル */}
-              </MUI.Button>
+              </SignUpButton>
             </MUI.Breadcrumbs>
             <SignUpDialog />
           </MUI.Toolbar>
-        </MUI.Container>
-      </MUI.AppBar>
+        </MUI.Box>
+      </AppBar>
     </MUI.Box>
   )
 }
