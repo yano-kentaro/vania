@@ -98,8 +98,8 @@ function Header() {
     <MUI.Box className="Header">
       {/* PC版 */}
       <AppBar position="fixed" className="flex justify-center items-center">
-        <MUI.Box height={"100%"} width={"95%"} className="flex justify-center">
-          <MUI.Toolbar disableGutters sx={{width: "100%"}} className="flex justify-between">
+        <MUI.Box className="flex justify-center h-full w-11-12">
+          <MUI.Toolbar disableGutters className="flex justify-between w-full">
             <MUI.Link href='#'>
               <img src={logo} height="50" alt="VANIA" />
             </MUI.Link>

@@ -12,13 +12,12 @@ code {
     monospace;
 }
 
-/*=========================================
+/* =========================================
 
-  Tailwind CSS 準拠クラス
+  Tailwind CSS 準拠クラス(一部記号は代用して定義)
   https://nerdcave.com/tailwind-cheat-sheet
 
-=========================================*/
-
+========================================= */
 /* Flexbox */
 .flex {
   display: flex;
@@ -33,4 +32,15 @@ code {
 }
 .items-center {
   align-items: center;
+}
+
+/* Sizing */
+.h-full {
+  height: 100%;
+}
+.w-11-12 {
+  width: 91.666667%;
+}
+.w-full {
+  width: 100%;
 }
