@@ -13,25 +13,21 @@
 const dialogTitle: {[key:string]: string} = {
     "ja": "グループを作る",
     "en": "CREATE GROUP",
-    "en-US": "CREATE GROUP",
 }
 
 const dialogText: {[key:string]: string} = {
     "ja": `グループを新たに作成します。\nグループのユーザーはGoogleアカウントで管理します。\nグループを作成したユーザーが、グループのオーナーになります。`,
     "en": `You can create a new group.\nUsers of the group will be managed by Google accounts.\nThe user who created the group becomes the owner of the group.`,
-    "en-US": `You can create a new group.\nUsers of the group will be managed by Google accounts.\nThe user who created the group becomes the owner of the group.`,
 }
 
 const cancelLabel: {[key:string]: string} = {
     "ja": "キャンセル",
     "en": "CANCEL",
-    "en-US": "CANCEL",
 }
 
 const okLabel: {[key:string]: string} = {
     "ja": "決定",
     "en": "OK",
-    "en-US": "OK",
 }
 
 //------------------------------------------

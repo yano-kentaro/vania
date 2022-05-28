@@ -15,7 +15,6 @@
 const functions: {[key:string]: string} = {
     "ja": "機能紹介",
     "en": "FUNCTIONS",
-    "en-US": "FUNCTIONS",
 }
 
 //------------------------------------------
@@ -23,7 +22,6 @@ const functions: {[key:string]: string} = {
 const plans: {[key:string]: string} = {
     "ja": "料金プラン",
     "en": "PLANS",
-    "en-US": "PLANS",
 }
 
 //------------------------------------------
@@ -31,7 +29,6 @@ const plans: {[key:string]: string} = {
 const techBlog: {[key:string]: string} = {
     "ja": "技術ブログ",
     "en": "TECH BLOG",
-    "en-US": "TECH BLOG",
 }
 
 //------------------------------------------
@@ -39,7 +36,6 @@ const techBlog: {[key:string]: string} = {
 const developerProfile: {[key:string]: string} = {
     "ja": "開発者プロフィール",
     "en": "DEVELOPER PROFILE",
-    "en-US": "DEVELOPER PROFILE",
 }
 
 //------------------------------------------
@@ -47,7 +43,6 @@ const developerProfile: {[key:string]: string} = {
 const signIn: {[key:string]: string} = {
     "ja": "ログイン",
     "en": "SIGN IN",
-    "en-US": "SIGN IN",
 }
 
 //------------------------------------------
@@ -55,7 +50,6 @@ const signIn: {[key:string]: string} = {
 const signUp: {[key:string]: string} = {
     "ja": "無料トライアル",
     "en": "FREE TRIAL",
-    "en-US": "FREE TRIAL",
 }
 
 //------------------------------------------
