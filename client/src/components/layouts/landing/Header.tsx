@@ -26,13 +26,13 @@ import { SignUpDialog, signUpFlagState } from '../../landing/SignUpDialog'
 
 //------------------------------------------
 // Functions
-import * as COMMON from '../../../lib/common'
-import * as TXT from '../../../text/landing/header'
+import * as COMMON from 'src/lib/common'
+import * as TXT from 'src/text/landing/header'
 
 //------------------------------------------
 // Static
-import logo from '../../../static/vania-logo.png'
-
+import logo from 'src/static/vania-logo.png'
+import 'src/common.css'
 
 //=============================================================|0
 //                    スタイル定義

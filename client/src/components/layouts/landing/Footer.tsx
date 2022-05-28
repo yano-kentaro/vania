@@ -17,7 +17,7 @@
 //------------------------------------------
 // Modules
 import { useState } from 'react'
-import { getLang } from '../../../lib/common'
+import { getLang } from 'src/lib/common'
 
 //------------------------------------------
 // Components

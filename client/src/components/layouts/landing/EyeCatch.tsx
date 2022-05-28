@@ -17,15 +17,15 @@
 //------------------------------------------
 // Modules
 import { useState } from 'react'
-import { getLang } from '../../../lib/common'
+import { getLang } from 'src/lib/common'
 
 //------------------------------------------
 // Components
 import * as MUI from '@mui/material'
 
 //------------------------------------------
-// Functions
-import * as TXT from '../../../text/landing/body'
+// Text
+import * as TXT from 'src/text/landing/body'
 
 //------------------------------------------
 // Static
