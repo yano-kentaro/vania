@@ -22,7 +22,7 @@ import { RecoilRoot } from 'recoil'
 
 //------------------------------------------
 // Components
-import Layout from './components/landing/Layout'
+import Landing from './components/pages/Landing'
 
 //------------------------------------------
 // CSS
@@ -34,7 +34,7 @@ import './index.css'
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <RecoilRoot>
-      <Layout />
+      <Landing />
     </RecoilRoot>
   </React.StrictMode>
 )
