@@ -34,7 +34,6 @@ import * as TXT from 'src/text/landing/body'
 //                    スタイル定義
 //====================================================|2022_05_25
 const outer = {
-  marginTop: "6.25rem",
   background: "linear-gradient(to right, #123456, #4C718C)",
 }
 
