@@ -23,10 +23,16 @@ code {
 .flex {
   display: flex;
 }
+.table {
+  display: table;
+}
 
 /* Box Alignment */
 .justify-center {
   justify-content: center;
+}
+.justify-around {
+  justify-content: space-around;
 }
 .justify-between {
   justify-content: space-between;
@@ -38,6 +44,9 @@ code {
 /* Sizing */
 .h-full {
   height: 100%;
+}
+.h-screen {
+  height: 100vh;
 }
 .w-11-12 {
   width: 91.666667%;
