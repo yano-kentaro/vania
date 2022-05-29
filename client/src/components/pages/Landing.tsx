@@ -47,7 +47,9 @@ function Landing() {
   return (
     <MUI.Box className="Landing">
       <Header />
+      <MUI.Box height={"6.25rem"} />
       <EyeCatch />
+      <MUI.Box height={100} />
       <Footer />
     </MUI.Box>
   )
