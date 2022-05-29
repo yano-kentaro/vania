@@ -23,6 +23,7 @@ import * as RCL from 'recoil'
 import * as MUI from '@mui/material'
 import Header from '../layouts/landing/Header'
 import EyeCatch from '../layouts/landing/EyeCatch'
+import Pricing from '../layouts/landing/Pricing'
 import Footer from '../layouts/landing/Footer'
 
 //------------------------------------------
@@ -50,6 +51,7 @@ function Landing() {
       <MUI.Box height={"6.25rem"} />
       <EyeCatch />
       <MUI.Box height={100} />
+      <Pricing />
       <Footer />
     </MUI.Box>
   )
