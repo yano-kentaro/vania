@@ -1,0 +1,32 @@
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="281px" height="51px" viewBox="-0.5 -0.5 281 51" content="&lt;mxfile&gt;&lt;diagram id=&quot;w_x86YFWTaMtNZJJ7Rg4&quot; name=&quot;ページ1&quot;&gt;jZNNU4MwEIZ/TY7OUBCkR6BYPeiljp4zTUoyhiwT0gL+epeSFNBxxguzefYzbxYSFXW/N7QRL8C4ImHAehLtSBgm2wS/IxgcSIMJVEayCW1mcJBf3EEfdpaMt6tAC6CsbNbwCFrzo10xagx067ATqHXXhlb8FzgcqfpNPySzYqJpHMz8ictK+M6bwHlq6oMdaAVl0C1QVJKoMAB2suq+4GrUzusy5T3+4b0NZri2/0kIp4QLVWd3NxImClNzgbWSarTes9fnDINIGZE0JPlkRCTLnZEXztg+kDImaUqyeJf7Qth8ruVubQcvpeX9tZutFYINmq018MkLUGCQaNAYmZ+kUj9Q29Cj1BWCeD69QYPgDoeN8k5Iyw/Ix1YdLiIyuHBzUlfFhWSMa2QGzprxUZDgNuFSQScqZuKwC+QU3XOouTUDhjjvvXvcYX3s5lUJ/cKLxZr4OOq2s7oVnh8QDfeG/jjvytW3+OGi8hs=&lt;/diagram&gt;&lt;/mxfile&gt;">
+    <defs/>
+    <g>
+        <rect x="0" y="10" width="280" height="40" fill="none" stroke="none" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 272px; height: 1px; padding-top: 0px; margin-left: 5px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; max-height: 50px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                <h1>
+                                    VANIA グループ別DB
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="5" y="12" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px">
+                    VANIA グループ別DB
+                </text>
+            </switch>
+        </g>
+    </g>
+    <switch>
+        <g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"/>
+        <a transform="translate(0,-5)" xlink:href="https://www.diagrams.net/doc/faq/svg-export-text-problems" target="_blank">
+            <text text-anchor="middle" font-size="10px" x="50%" y="100%">
+                Viewer does not support full SVG 1.1
+            </text>
+        </a>
+    </switch>
+</svg>
