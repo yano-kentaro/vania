@@ -19,6 +19,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { RecoilRoot } from 'recoil'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 //------------------------------------------
 // Components
@@ -33,8 +34,12 @@ import './common.css'
 //====================================================|2022_05_22
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RecoilRoot>
-      <Landing />
-    </RecoilRoot>
+      <RecoilRoot>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Landing />} />
+          </Routes>
+        </BrowserRouter>
+      </RecoilRoot>
   </React.StrictMode>
 )
