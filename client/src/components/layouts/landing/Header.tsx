@@ -30,6 +30,10 @@ import * as COMMON from 'src/lib/common'
 import * as TXT from 'src/text/landing/header'
 
 //------------------------------------------
+// Tailwind CSS
+import 'src/index.css'
+
+//------------------------------------------
 // Static
 import logo from 'src/static/vania-logo.png'
 import 'src/common.css'
@@ -101,10 +105,10 @@ function Header() {
         <MUI.Box className="flex justify-center h-full w-11-12">
           <MUI.Toolbar disableGutters className="flex justify-between w-full">
             <MUI.Link href='#'>
-              <img src={logo} height="50" alt="VANIA" />
+              <img src={logo} alt="VANIA" className="h-14" />
             </MUI.Link>
             <MUI.Breadcrumbs color="white">
-              <MenuButton>
+              <MenuButton className="underline">
                 {TXT.functions[lang]/* 機能紹介 */}
               </MenuButton>
               <MenuButton>
