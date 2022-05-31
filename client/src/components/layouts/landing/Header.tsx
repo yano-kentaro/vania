@@ -108,7 +108,7 @@ function Header() {
               <img src={logo} alt="VANIA" className="h-14" />
             </MUI.Link>
             <MUI.Breadcrumbs color="white">
-              <MenuButton className="underline">
+              <MenuButton>
                 {TXT.functions[lang]/* 機能紹介 */}
               </MenuButton>
               <MenuButton>
