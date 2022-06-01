@@ -27,11 +27,14 @@ import { SignUpDialog, signUpFlagState } from '../../landing/SignUpDialog'
 //------------------------------------------
 // Functions
 import * as COMMON from 'src/lib/common'
-import * as TXT from 'src/text/landing/header'
 
 //------------------------------------------
 // Tailwind CSS
 import 'src/index.css'
+
+//------------------------------------------
+// Text
+import * as TXT from 'src/text/landing/header'
 
 //------------------------------------------
 // Static
