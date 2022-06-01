@@ -18,6 +18,7 @@
 // Modules
 import * as RCL from 'recoil'
 import { styled } from '@mui/material/styles'
+import { useNavigate } from 'react-router-dom';
 
 //------------------------------------------
 // Components
@@ -100,6 +101,9 @@ function Header() {
   function accessDeveloperProfile() {
     window.open('https://www.kengineer.dev/pages/author/', '_blank');
   }
+  //------------------------------------------
+  // Workspaceへ遷移
+  const navigate = useNavigate();
 
   return (
     <MUI.Box className="Header">
@@ -123,7 +127,7 @@ function Header() {
               <MenuButton onClick={accessDeveloperProfile}>
                 {TXT.developerProfile[lang]/* 開発者プロフィール */}
               </MenuButton>
-              <MenuButton>
+              <MenuButton onClick={() => navigate("/workspace")}>
                 {TXT.signIn[lang]/* ログイン */}
               </MenuButton>
               <SignUpButton variant="contained" onClick={toggleSignUpFlag}>
