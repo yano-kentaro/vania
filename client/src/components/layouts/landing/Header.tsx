@@ -18,6 +18,7 @@
 // Modules
 import * as RCL from 'recoil'
 import { styled } from '@mui/material/styles'
+import { useNavigate } from 'react-router-dom';
 
 //------------------------------------------
 // Components
@@ -27,11 +28,14 @@ import { SignUpDialog, signUpFlagState } from '../../landing/SignUpDialog'
 //------------------------------------------
 // Functions
 import * as COMMON from 'src/lib/common'
-import * as TXT from 'src/text/landing/header'
 
 //------------------------------------------
 // Tailwind CSS
 import 'src/index.css'
+
+//------------------------------------------
+// Text
+import * as TXT from 'src/text/landing/header'
 
 //------------------------------------------
 // Static
@@ -97,6 +101,9 @@ function Header() {
   function accessDeveloperProfile() {
     window.open('https://www.kengineer.dev/pages/author/', '_blank');
   }
+  //------------------------------------------
+  // Workspaceへ遷移
+  const navigate = useNavigate();
 
   return (
     <MUI.Box className="Header">
@@ -120,7 +127,7 @@ function Header() {
               <MenuButton onClick={accessDeveloperProfile}>
                 {TXT.developerProfile[lang]/* 開発者プロフィール */}
               </MenuButton>
-              <MenuButton>
+              <MenuButton onClick={() => navigate("/workspace")}>
                 {TXT.signIn[lang]/* ログイン */}
               </MenuButton>
               <SignUpButton variant="contained" onClick={toggleSignUpFlag}>

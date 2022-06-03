@@ -512,6 +512,13 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
+"@types/mui-image@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@types/mui-image/-/mui-image-1.0.0.tgz#52b3d3e1af2e5109860ad7e39d9142db34c50e3a"
+  integrity sha512-sMBj/VJ6lEE+GRHon4v08gy32b4YWYqMFh8fdb8cX3y9+pwnQv4lID2g9CBij3VOew9BvTpVeOALJTYVBtjI/A==
+  dependencies:
+    "@types/react" "*"
+
 "@types/node@^17.0.35":
   version "17.0.35"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.35.tgz#635b7586086d51fb40de0a2ec9d1014a5283ba4a"
@@ -1204,6 +1211,11 @@ ms@2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
+
+mui-image@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/mui-image/-/mui-image-1.0.4.tgz#98fd365efedd30933bc90405a49d945afec270f1"
+  integrity sha512-X2MdelRdzEE8KWCmCpUHEm37VgsfcaEN1+AdOgJ4N1AwGu7RAb7Kf1W7Zgy0XuogVOoC1ULHtuSgjGghEh9NrQ==
 
 nanoid@^3.3.4:
   version "3.3.4"

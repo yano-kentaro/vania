@@ -23,11 +23,12 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 //------------------------------------------
 // Components
-import Landing from './components/pages/Landing'
+import Landing from 'src/components/pages/Landing'
+import Workspace from 'src/components/pages/Workspace'
 
 //------------------------------------------
 // CSS
-import './common.css'
+import 'src/common.css'
 
 //=============================================================|0
 //                    コンポーネント定義
@@ -37,7 +38,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <RecoilRoot>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Landing />} />
+            <Route index element={<Landing />} />
+            <Route path="/workspace" element={<Workspace />} />
+            {/* <Route path="*" element={<NotFound />}></Route> */}
           </Routes>
         </BrowserRouter>
       </RecoilRoot>
